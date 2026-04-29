@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>ActionBox | Login</title>
 </head>
-<body style="display: flex; align-items: center; justify-content: center; height: 100vh;">
-    <div style="background: #0a0a0f; padding: 40px; border-radius: 15px; border: 2px solid #ff0000; box-shadow: 0 0 20px #ff0000; width: 350px; text-align: center;">
-        <h2 style="color: #00d4ff; font-family: 'Orbitron';">USER LOGIN</h2>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background-color: #0a0a0f;">
+
+    <div style="background: #0a0a0f; padding: 40px; border: 2px solid #ff4500; border-radius: 10px; text-align: center;">
+        <h2 style="color: #00d4ff; font-family: 'Orbitron', sans-serif; margin-bottom: 20px;">USER LOGIN</h2>
+        
         <form>
-            <input type="email" placeholder="Email Address" required style="width: 100%; padding: 12px; margin: 10px 0; background: #111; border: 1px solid #00d4ff; color: white; border-radius: 5px;">
-            <input type="password" placeholder="Password" required style="width: 100%; padding: 12px; margin: 10px 0; background: #111; border: 1px solid #00d4ff; color: white; border-radius: 5px;">
-            <button type="submit" class="btn-watch" style="width: 100%; border: none; cursor: pointer;">Sign In</button>
+            <input type="email" placeholder="Email Address" required style="display: block; width: 100%; margin-bottom: 15px; padding: 10px;">
+            <input type="password" placeholder="Password" required style="display: block; width: 100%; margin-bottom: 20px; padding: 10px;">
+            
+            <button type="submit" class="btn-watch" style="background: #ff0000; color: white; border: none; padding: 10px 30px; cursor: pointer; transition: 0.3s;">
+                Sign In
+            </button>
         </form>
-        <p style="margin-top: 15px; font-size: 0.8rem;">New here? <a href="register.html" style="color: #00d4ff;">Create Account</a></p>
+
+        <p style="margin-top: 15px; font-size: 0.8rem; color: white;">
+            New here? <a href="#" style="color: #00d4ff;">Create Account</a>
+        </p>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
