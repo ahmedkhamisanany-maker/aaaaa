@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ActionBox | Player</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .player-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 5%;
+        }
+        iframe {
+            width: 80%;
+            height: 500px;
+            border: 2px solid #00d4ff;
+            box-shadow: 0 0 20px #ff0000;
+            border-radius: 10px;
+        }
+        .back-btn {
+            margin-top: 20px;
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">ACTION<span>BOX</span></div>
+</nav>
+
+<div class="player-container">
+    <h2 id="movie-title" style="color: #00d4ff; text-shadow: 0 0 5px #00d4ff;">Loading Movie...</h2>
+    
+    <div id="player-wrapper" style="width: 100%; display: flex; justify-content: center;">
+        </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+</div>
+
+<script>
+    // كود بسيط عشان يعرف إنت دوست على أنهي فيلم ويجيبه
+    const urlParams = new URLSearchParams(window.location.search);
+    const movie = urlParams.get('movie');
+    const playerWrapper = document.getElementById('player-wrapper');
+    const title = document.getElementById('movie-title');
+
+    // مكتبة لينكات الأفلام (سيرفرات ديمو للمشاهدة)
+    const movies = {
+        'dune': { title: 'Dune: Part Two', id: '1011985' }, // TMDB ID
+        'darkknight': { title: 'The Dark Knight', id: '155' },
+        'interstellar': { title: 'Interstellar', id: '157336' }
+    };
+
+    if(movies[movie]) {
+        title.innerText = "Watching: " + movies[movie].title;
+        // سيرفر خارجي بيعرض الفيلم بمجرد ما تديله الـ ID بتاعه
+        playerWrapper.innerHTML = `<iframe src="https://vidsrc.me/embed/movie?tmdb=${movies[movie].id}" allowfullscreen></iframe>`;
+    } else {
+        title.innerText = "Movie Not Found!";
+    }
+</script>
+
+</body>
+</html>
