@@ -1,15 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Neon Red & Blue Theme Active!");
-    
+
+    // 1. كود تأثيرات الأزرار (MouseEnter & MouseLeave)
     const btns = document.querySelectorAll('.btn-watch');
     btns.forEach(btn => {
         btn.addEventListener('mouseenter', () => {
-            btn.style.background = '#00d4ff'; // يقلب أزرق لما الماوس ييجي عليه
+            btn.style.background = '#00d4ff';
             btn.style.boxShadow = '0 0 20px #00d4ff';
         });
+
         btn.addEventListener('mouseleave', () => {
-            btn.style.background = '#ff0000'; // يرجع أحمر لما الماوس يبعد
+            btn.style.background = '#ff0000';
             btn.style.boxShadow = '0 0 10px #ff0000';
         });
     });
+
+    // 2. كود التحويل عند عمل Login
+    const loginForm = document.querySelector('form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // منع الصفحة من إعادة التحميل
+
+            // حفظ حالة الدخول (اختياري)
+            localStorage.setItem('isLoggedIn', 'true');
+
+            // التحويل لصفحة الـ Home
+            // تأكد أن اسم الملف هو index.html أو movies.html حسب مشروعك
+            window.location.href = 'index.html'; 
+        });
+    }
 });
